@@ -139,21 +139,20 @@ function getPasswordOptions() {
       special
   );
   console.log(passwordLength, lowerCase, upperCase, numeric, special);
-  let characters = [];
-  if (lowerCase === true) {
-    characters = characters.concat(lowerCasedCharacters);
-  }
-  if (upperCase === true) {
-    characters = characters.concat(upperCasedCharacters);
-  }
-  if (numeric === true) {
-    characters = characters.concat(numericCharacters);
-  }
-  if (special === true) {
-    characters = characters.concat(specialCharacters);
-  }
-  console.log(characters);
-  return characters, passwordLength;
+  // let characters = [];
+  // if (lowerCase === true) {
+  //   characters = characters.concat(lowerCasedCharacters);
+  // }
+  // if (upperCase === true) {
+  //   characters = characters.concat(upperCasedCharacters);
+  // }
+  // if (numeric === true) {
+  //   characters = characters.concat(numericCharacters);
+  // }
+  // if (special === true) {
+  //   characters = characters.concat(specialCharacters);
+  // }
+  return passwordLength, lowerCase, upperCase, numeric, special;
 }
 
 // Function for getting a random element from an array
@@ -166,13 +165,32 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
-  let characters,
-    passwordLength = getPasswordOptions();
-  let password = "";
-  for (let i = 0; i < passwordLength; i++) {
-    password += getRandom(characters);
+  let passwordOptions = getPasswordOptions();
+  // let password = "";
+  let characters = [];
+
+  if (passwordOptions.lowerCase === true) {
+    characters = characters.concat(lowerCasedCharacters);
   }
-  return password;
+  if (passwordOptions.upperCase === true) {
+    characters = characters.concat(upperCasedCharacters);
+  }
+  if (passwordOptions.numeric === true) {
+    characters = characters.concat(numericCharacters);
+  }
+  if (passwordOptions.special === true) {
+    characters = characters.concat(specialCharacters);
+  }
+  console.log(characters);
+  // }
+
+  // for (let i = 0; i < passwordOptions.passwordLength; i++) {
+  //   password += characters[Math.floor(Math.random() * characters.length)];
+  // }
+  // {
+  //   console.log(password);
+  // }
+  // return password;
 }
 
 // Get references to the #generate element
