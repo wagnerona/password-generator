@@ -152,7 +152,7 @@ function getPasswordOptions() {
   // if (special === true) {
   //   characters = characters.concat(specialCharacters);
   // }
-  return passwordLength, lowerCase, upperCase, numeric, special;
+  return { passwordLength, lowerCase, upperCase, numeric, special };
 }
 
 // Function for getting a random element from an array
