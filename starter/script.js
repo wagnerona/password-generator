@@ -153,7 +153,7 @@ function getPasswordOptions() {
     characters = characters.concat(specialCharacters);
   }
   console.log(characters);
-  return characters = [];
+  return characters, passwordLength;
 }
 
 // Function for getting a random element from an array
@@ -166,8 +166,13 @@ function getRandom(arr) {
 
 // Function to generate password with user input
 function generatePassword() {
-  getPasswordOptions();
-
+  let characters,
+    passwordLength = getPasswordOptions();
+  let password = "";
+  for (let i = 0; i < passwordLength; i++) {
+    password += getRandom(characters);
+  }
+  return password;
 }
 
 // Get references to the #generate element
