@@ -93,6 +93,7 @@ function getPasswordOptions() {
   let passwordLength = prompt(
     "Please select a password length between 10 and 64"
   );
+  passwordLength = parseInt(passwordLength);
   while (passwordLength < 10 || passwordLength > 64) {
     alert(
       "Password length must be between 10 and 64, please input your choice again"
@@ -165,7 +166,7 @@ function getRandom(arr) {
 // Function to generate password with user input
 function generatePassword() {
   let passwordOptions = getPasswordOptions();
-  // let password = "";
+  let password = "";
   let characters = [];
 
   if (passwordOptions.lowerCase === true) {
