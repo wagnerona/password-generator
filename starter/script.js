@@ -151,29 +151,25 @@ function getRandom(arr) {
 // // function to create new array from selected characters and type password
 function getPickedCharacters() {
   let characters = [];
-  if ((getPasswordOptions.lowerCase = true));
-  {
+  if ((getPasswordOptions.lowerCase = true)) {
     characters = characters.concat(lowerCasedCharacters);
   }
-  if ((getPasswordOptions.upperCase = true));
-  {
+  if ((getPasswordOptions.upperCase = true)) {
     characters = characters.concat(upperCasedCharacters);
   }
-  if ((getPasswordOptions.numeric = true));
-  {
+  if ((getPasswordOptions.numeric = true)) {
     characters = characters.concat(numericCharacters);
   }
-  if ((getPasswordOptions.special = true));
-  {
+  if ((getPasswordOptions.special = true)) {
     characters = characters.concat(specialCharacters);
   }
   console.log(characters);
 }
 
-function getPassword() {
-//   let userPass = [];
-//   while (userPass.length < getPasswordOptions.passwordLength) {
-//     const randomPass =  
+// function getPassword() {
+//   let userPass = " ";
+//   for (let i = 0; i < getPasswordOptions.passwordLength; i++) {
+//     userPass += getRandom(getPickedCharacters.characters);
 //   }
 //   console.log(userPass);
 // }
@@ -182,7 +178,7 @@ function getPassword() {
 function generatePassword() {
   getPasswordOptions();
   getPickedCharacters();
-  // getPassword();
+  // getPassword()
   // let password = "";
   // for (let i = 0; i < passwordLength.length; i++) {
   //   password += getRandom(characters);
