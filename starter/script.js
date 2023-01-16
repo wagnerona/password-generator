@@ -138,52 +138,36 @@ function getPasswordOptions() {
       " \nspecial: " +
       special
   );
+  console.log(passwordLength, lowerCase, upperCase, numeric, special);
+  let characters = [];
+  if (lowerCase === true) {
+    characters = characters.concat(lowerCasedCharacters);
+  }
+  if (upperCase === true) {
+    characters = characters.concat(upperCasedCharacters);
+  }
+  if (numeric === true) {
+    characters = characters.concat(numericCharacters);
+  }
+  if (special === true) {
+    characters = characters.concat(specialCharacters);
+  }
+  console.log(characters);
+  return characters = [];
 }
 
 // Function for getting a random element from an array
 function getRandom(arr) {
   let randomChars = Math.floor(Math.random() * arr.length);
-  // let randomNumb = arr[randomChars];
+  console.log(arr[randomChars]);
   return arr[randomChars];
   //note we could also put the math.floor directly inside the [], although here I just returned the randomChar selected inside the array
 }
 
-// // function to create new array from selected characters and type password
-function getPickedCharacters() {
-  let characters = [];
-  if ((getPasswordOptions.lowerCase = true)) {
-    characters = characters.concat(lowerCasedCharacters);
-  }
-  if ((getPasswordOptions.upperCase = true)) {
-    characters = characters.concat(upperCasedCharacters);
-  }
-  if ((getPasswordOptions.numeric = true)) {
-    characters = characters.concat(numericCharacters);
-  }
-  if ((getPasswordOptions.special = true)) {
-    characters = characters.concat(specialCharacters);
-  }
-  console.log(characters);
-}
-
-// function getPassword() {
-//   let userPass = " ";
-//   for (let i = 0; i < getPasswordOptions.passwordLength; i++) {
-//     userPass += getRandom(getPickedCharacters.characters);
-//   }
-//   console.log(userPass);
-// }
-
 // Function to generate password with user input
 function generatePassword() {
   getPasswordOptions();
-  getPickedCharacters();
-  // getPassword()
-  // let password = "";
-  // for (let i = 0; i < passwordLength.length; i++) {
-  //   password += getRandom(characters);
-  // }
-  // return password;
+
 }
 
 // Get references to the #generate element
