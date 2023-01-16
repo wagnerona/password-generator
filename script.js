@@ -93,7 +93,6 @@ function getPasswordOptions() {
   let passwordLength = prompt(
     "Please select a password length between 10 and 64"
   );
-  passwordLength = parseInt(passwordLength); //parse Int to change from number to integer
   while (passwordLength < 10 || passwordLength > 64) {
     alert(
       "Password length must be between 10 and 64, please input your choice again"
@@ -182,15 +181,13 @@ function generatePassword() {
     characters = characters.concat(specialCharacters);
   }
   console.log(characters);
-  // }
-
-  // for (let i = 0; i < passwordOptions.passwordLength; i++) {
-  //   password += characters[Math.floor(Math.random() * characters.length)];
-  // }
-  // {
-  //   console.log(password);
-  // }
-  // return password;
+  for (let i = 0; i < passwordOptions.passwordLength; i++) {
+    password += characters[Math.floor(Math.random() * characters.length)];
+  }
+  {
+    console.log(password);
+  }
+  return password;
 }
 
 // Get references to the #generate element
