@@ -29,7 +29,7 @@ _I soon learned that this Pseudo code was not going to work, I ended up spending
 
 ## Usage
 
-![Usage](/assets/Myscreenshot.png)
+![Usage](/assets/Images/Myscreenshot.png)
 
 1. Click on the button to generate a password
 2. Select a number between 10 and 64
