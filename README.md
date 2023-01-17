@@ -38,7 +38,11 @@ _I soon learned that this Pseudo code was not going to work, I ended up spending
 
 ## Deployed website
 
+https://wagnerona.github.io/password-generator/
+
 ## Github repo
+
+https://github.com/wagnerona/password-generator
 
 ## Credits and useful info
 
