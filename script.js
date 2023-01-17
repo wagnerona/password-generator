@@ -93,11 +93,18 @@ function getPasswordOptions() {
   let passwordLength = prompt(
     "Please select a password length between 10 and 64"
   );
-  passwordLength = parseInt(passwordLength);
-  while (passwordLength < 10 || passwordLength > 64) {
+  if(passwordLength === null){
+    return null;
+}
+  while (
+    isNaN(passwordLength) ||
+    !Number.isInteger(parseInt(passwordLength)) ||
+    passwordLength < 10 ||
+    passwordLength > 64
+  ) {
     alert(
-      "Password length must be between 10 and 64, please input your choice again"
-    );
+      "Password length must be a number between 10 and 64, please input your choice again"
+    ); // ASK BCS suggested using .split (" ") if user typed 2 numbers, however I later found out I also needed something for when user typed a string
     return getPasswordOptions();
   } // this if statement checks that the user not selected a number less than 10 || (and) more than 64. The || (double pipe) checks both statements are true. If they are not it comes back with the alert
   let lowerCase = confirm(
